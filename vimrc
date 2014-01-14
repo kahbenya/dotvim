@@ -7,17 +7,15 @@
 " 'compatible' option.
 
 
-" pathogen
+set nocompatible
+ "pathogen
 execute pathogen#infect()
+" call pathogen#incubate()
 call pathogen#helptags()
-
 
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
-runtime! debian.vim
-
-
-
+ "runtime! debian.vim
 
 " Uncomment the next line to make Vim more Vi-compatible
 " NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
@@ -46,6 +44,7 @@ if has("autocmd")
   filetype plugin indent on
 endif
 
+let mapleader=","
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
 set showcmd		" Show (partial) command in status line.
@@ -64,7 +63,7 @@ endif
 
 
 set number
-set tabstop=4
+set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 set pastetoggle=<F2>
 
 
@@ -136,7 +135,6 @@ set listchars=tab:▸\ ,eol:¬
 
 " from http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 " #######
-let mapleader="/"
 
 set ignorecase
 set smartcase
@@ -160,3 +158,5 @@ autocmd BufWritePost .vimrc source %
 
 
 nnoremap <F5> :GundoToggle<CR>
+
+"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
