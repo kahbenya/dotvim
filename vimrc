@@ -158,3 +158,5 @@ au FocusLost * :wa
 autocmd BufWritePost .vimrc source %
 " #######
 
+
+nnoremap <F5> :GundoToggle<CR>
