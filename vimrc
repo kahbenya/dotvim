@@ -161,3 +161,5 @@ autocmd BufWritePost .vimrc source %
 nnoremap <F5> :GundoToggle<CR>
 
 "set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+set scrolloff=1000
