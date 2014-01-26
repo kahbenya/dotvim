@@ -125,6 +125,7 @@ au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au Filetype html,xml,xsl source ~/.vim/scripts/closetag.vim  
 
 au Filetype markdown,md setlocal wrap linebreak nolist showbreak=...
+            \ textwidth=79 formatoptions=qrn1
 
 
 " Shortcut to rapidly toggle `set list`
@@ -147,7 +148,7 @@ set relativenumber
 nnoremap <tab> %
 vnoremap <tab> %
 
-set wrap
+set wrap linebreak nolist showbreak=...
 set textwidth=79
 set formatoptions=qrn1
 " set colorcolumn=85
