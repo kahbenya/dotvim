@@ -14,7 +14,7 @@ Initialize and update submodules
 > 
     cd .vim
     git submodule init
-    git submodules update
+    git submodule update
 
 Symlink vimrc file
 
