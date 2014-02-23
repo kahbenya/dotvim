@@ -142,6 +142,7 @@ set incsearch
 set showmatch
 set hlsearch
 set relativenumber
+set undofile
 
 nnoremap <tab> %
 vnoremap <tab> %
