@@ -114,15 +114,13 @@ set hls
 
 nnoremap <Space> :noh<CR>
 
-nnoremap k gkzz
-nnoremap j gjzz
+nnoremap k gk
+nnoremap j gj
 nnoremap $ g$
 
 
 "set modeline
 au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
-
-au Filetype html,xml,xsl source ~/.vim/scripts/closetag.vim  
 
 au Filetype markdown,md setlocal wrap linebreak nolist showbreak=...
             \ textwidth=79 formatoptions=qrn1
@@ -153,7 +151,6 @@ set textwidth=79
 set formatoptions=qrn1
 " set colorcolumn=85
 
-au FocusLost * :wa
 
 autocmd BufWritePost .vimrc source %
 " #######
@@ -161,4 +158,5 @@ autocmd BufWritePost .vimrc source %
 
 nnoremap <F5> :GundoToggle<CR>
 
+au FocusLost * :wa
 "set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
