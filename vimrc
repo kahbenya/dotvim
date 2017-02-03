@@ -130,7 +130,7 @@ au Filetype markdown,md setlocal wrap linebreak nolist showbreak=...
 nmap <leader>l :set list!<CR>
  
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+" set listchars=tab:▸\ ,eol:¬
 
 " from http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 " #######
