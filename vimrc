@@ -123,14 +123,14 @@ nnoremap $ g$
 au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 au Filetype markdown,md setlocal wrap linebreak nolist showbreak=...
-            \ textwidth=79 formatoptions=qrn1
+            \ textwidth=79 formatoptions=qrn1t
 
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
  
 " Use the same symbols as TextMate for tabstops and EOLs
-" set listchars=tab:▸\ ,eol:¬
+"set listchars=tab:▸\ ,eol:¬
 
 " from http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 " #######
@@ -147,9 +147,10 @@ set undofile
 nnoremap <tab> %
 vnoremap <tab> %
 
-set wrap linebreak nolist showbreak=...
+set wrap linebreak nolist 
+"showbreak=...
 set textwidth=79
-set formatoptions=qrn1
+set formatoptions=qrn1t
 " set colorcolumn=85
 
 
@@ -161,3 +162,18 @@ nnoremap <F5> :GundoToggle<CR>
 
 au FocusLost * :wa
 "set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+" for trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
+
+autocmd BufWritePre     *.md,*.rb,*.py :call TrimWhiteSpace()
+
