@@ -128,7 +128,7 @@ au Filetype markdown,md setlocal wrap linebreak nolist showbreak=...
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
- 
+
 " Use the same symbols as TextMate for tabstops and EOLs
 "set listchars=tab:▸\ ,eol:¬
 
@@ -147,7 +147,7 @@ set undofile
 nnoremap <tab> %
 vnoremap <tab> %
 
-set wrap linebreak nolist 
+set wrap linebreak nolist
 "showbreak=...
 set textwidth=79
 set formatoptions=qrn1t
@@ -175,5 +175,6 @@ function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
 
-autocmd BufWritePre     *.md,*.rb,*.py :call TrimWhiteSpace()
+" autocmd BufWritePre     *.md,*.rb,*.py :call TrimWhiteSpace()
+autocmd BufWritePre     * :call TrimWhiteSpace()
 
