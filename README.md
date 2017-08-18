@@ -7,7 +7,7 @@ INSTALL
 -------
 Clone the repo
 > 
-    git clone https://github.com/kahbenya/dotvim.git .vim
+    git clone https://github.com/kahbenya/dotvim.git ~/.vim
 
 Initialize and update submodules
 
